@@ -13,7 +13,7 @@ def plot():
     plt.show()
 
 def parta():
-    i = 0
+    i = 1
     while i < 1000:
         print(a(i))
         i += 1
@@ -22,7 +22,7 @@ def parta():
 def partb():
     L = -2.0
     eps = 1/500
-    N = 0
+    N = 1
 
     while abs(a(N) - L) >= eps:
         N += 1
@@ -37,8 +37,18 @@ def partc():
     ans = M + 1
     print(str(ans))
 
+def partd():
+    epsilon = 1/500
+    L = -2.0
+    x = np.arange(100,115,0.5)
+    y= abs(a(x) - L)
+    plt.plot(x,y,'ro')
+    plt.axhline(y = 0.002, color = 'b', linestyle = '-')
+    plt.show()
+
+
 
 def main():
-    partc()
+    parta()
 
 main()
