@@ -48,10 +48,24 @@ task2 = function(){
 }
 
 task3 = function(){
-  marked = points(x[y>3], y[y > 3], col = "red")
   title = title(main = "Snowfall in m per year")
-  plot(x,y,xlab="Year",ylab="Snowfall (m)", col = ifelse(y > 3,'red','black'), pch = 19 )
-  
+  plot(x,y,xlab="Year",ylab="Snowfall (m)", col = ifelse(y > 3,'blue','black'), pch = 19 )
+  # Used for(index in greater_than_3m){
+  #  print(data[index,1])
+#  }
+# To generate these
+  abline(v = 1910, col="red", lwd=3, lty=2)
+  abline(v = 1945, col="red", lwd=3, lty=2)
+  abline(v = 1958, col="red", lwd=3, lty=2)
+  abline(v = 1970, col="red", lwd=3, lty=2)
+  abline(v = 1977, col="red", lwd=3, lty=2)
+  abline(v = 1978, col="red", lwd=3, lty=2)
+  abline(v = 1984, col="red", lwd=3, lty=2)
+  abline(v = 1996, col="red", lwd=3, lty=2)
+  abline(v = 2001, col="red", lwd=3, lty=2)
+  abline(v = 2002, col="red", lwd=3, lty=2)
+  abline(v = 2014, col="red", lwd=3, lty=2)
+
 
 }
 
@@ -61,5 +75,6 @@ task4 = function(brks){
 
 main = function(){
   task3()
+
 }
 main()
