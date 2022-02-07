@@ -1,8 +1,10 @@
-# TASK 1:
 data = read.csv('file:///Users/igorpietrzak/Downloads/buffalo.csv')
+
+# TASK 1:
 max_snowfall = max(data$snowfall)
 min_snowfall = min(data$snowfall)
-#TASK 2:
+
+# TASK 2:
 # a.)
 min_snowfall_year_row = which(grepl(min_snowfall, data$snowfall)) # Finding row
 max_snowfall_year = data[min_snowfall_year_row, 1] # storing value of found row
@@ -19,3 +21,10 @@ snowfall_in_cm_sd = sd(snowfall_in_cm)
 # f.)
 snowfall_in_m = (snowfall_in_cm)/100
 greater_than_3m = length(which(snowfall_in_m > 3))
+
+# TASK 3
+x = data$year
+y = snowfall_in_m
+marked = points(x[y > 3], y[y > 3], col = "red")
+title = title(main = "Snowfall in m per year")
+plot(x, y + marked, xlab = "Year", ylab = "Snowfall (m)", main = title)
