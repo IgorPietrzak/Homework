@@ -19,11 +19,11 @@ snowfall_in_cm = (data$snowfall)*2.54
 snowfall_in_cm_sd = sd(snowfall_in_cm)
 # f.)
 snowfall_in_m = (snowfall_in_cm)/100
-greater_than_3m = length(which(snowfall_in_m > 3))
+hm_greater_than_3m = length(which(snowfall_in_m > 3))
 # TASK 3:
 x = data$year
 y = snowfall_in_m
-
+greater_than_3m = (which(snowfall_in_m > 3))
 # Functions performing each of the tasks:
 task1 = function(){
   print("Minimum snowfall:")
@@ -48,9 +48,11 @@ task2 = function(){
 }
 
 task3 = function(){
-  marked = points(x[y > 3], y[y > 3], col = "red")
+  marked = points(x[y>3], y[y > 3], col = "red")
   title = title(main = "Snowfall in m per year")
-  plot(x, y + marked, xlab = "Year", ylab = "Snowfall (m)", main = title)
+  plot(x,y,xlab="Year",ylab="Snowfall (m)", col = ifelse(y > 3,'red','black'), pch = 19 )
+  
+
 }
 
 task4 = function(brks){
@@ -58,6 +60,6 @@ task4 = function(brks){
 }
 
 main = function(){
-
+  task3()
 }
 main()
