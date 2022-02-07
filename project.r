@@ -20,6 +20,9 @@ snowfall_in_cm_sd = sd(snowfall_in_cm)
 # f.)
 snowfall_in_m = (snowfall_in_cm)/100
 greater_than_3m = length(which(snowfall_in_m > 3))
+# TASK 3:
+x = data$year
+y = snowfall_in_m
 
 # Functions performing each of the tasks:
 task1 = function(){
@@ -44,10 +47,17 @@ task2 = function(){
   print(greater_than_3m)
 }
 
-task3 = function{
-  x = data$year
-  y = snowfall_in_m
+task3 = function(){
   marked = points(x[y > 3], y[y > 3], col = "red")
   title = title(main = "Snowfall in m per year")
   plot(x, y + marked, xlab = "Year", ylab = "Snowfall (m)", main = title)
 }
+
+task4 = function(brks){
+  hist(y,breaks = brks)
+}
+
+main = function(){
+
+}
+main()
