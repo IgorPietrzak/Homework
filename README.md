@@ -1,4 +1,4 @@
-The stats project is in the "project.r" file.
+The stats project is here: https://github.com/IgorPietrzak/Praca-Domowa/blob/main/project.r 
 
 There are 4 functions for the 4 tasks, if you want to produce an answer, follow these steps:
 
