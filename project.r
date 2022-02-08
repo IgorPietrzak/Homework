@@ -26,14 +26,14 @@ y = snowfall_in_m
 greater_than_3m = (which(snowfall_in_m > 3))
 lin_width = 2
 # Functions performing each of the tasks:
-task1 = function(){
+task1 <- function(){
   print("Minimum snowfall:")
   print(min_snowfall)
   print("Maximum snowfall:")
   print(max_snowfall)
 }
 
-task2 = function(){
+task2 <- function(){
   print("a.)")
   print(min_snowfall_year)
   print("b.)")
@@ -48,7 +48,7 @@ task2 = function(){
   print(hm_greater_than_3m)
 }
 
-task3 = function(){
+task3 <- function(){
   title = title(main = "Snowfall in m per year")
   plot(x,y,xlab="Year",ylab="Snowfall (m)", col = ifelse(y > 3,'blue','black'), pch = 19 )
   # Used for(index in greater_than_3m){
@@ -70,12 +70,17 @@ task3 = function(){
 
 }
 
-task4 = function(brks){
+get_mode <- function(d) {
+   uniqued <- unique(d)
+   uniqued[which.max(tabulate(match(d, uniqued)))]
+}
+
+task4 <- function(brks){
   hist(y,breaks = brks)
 }
 
-main = function(){
-  task4(10)
+main <- function(){
+  get_mode(data$snowfall)
 
 }
 main()
