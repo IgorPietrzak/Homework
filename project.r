@@ -80,7 +80,7 @@ task4 <- function(brks){
 }
 
 main <- function(){
-  get_mode(data$snowfall)
+  
 
 }
 main()
