@@ -20,7 +20,15 @@ There are 4 functions for the 4 tasks, if you want to produce an answer, follow 
       
      
     
-3.) Note that task4 function requires you to enter the number of breaks you want in your histogram, so, when calling it specify the number # you want:
+3.) Note that task4 function requires you to enter the number of breaks you want in your histogram, so, when calling it specify the number you want. Let's say you want to have 10 breaks, then you would type:
 
-task4(#)
 
+```R
+
+  main <- function(){
+    task4(10)
+
+  }
+  main()
+  
+```
