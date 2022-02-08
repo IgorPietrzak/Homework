@@ -32,3 +32,4 @@ There are 4 functions for the 4 tasks, if you want to produce an answer, follow 
   main()
   
 ```
+Useful link that explains how to draw straight lines: http://www.sthda.com/english/wiki/abline-r-function-an-easy-way-to-add-straight-lines-to-a-plot-using-r-software
