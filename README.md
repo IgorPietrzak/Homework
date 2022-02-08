@@ -33,3 +33,9 @@ There are 4 functions for the 4 tasks, if you want to produce an answer, follow 
   
 ```
 Useful link that explains how to draw straight lines: http://www.sthda.com/english/wiki/abline-r-function-an-easy-way-to-add-straight-lines-to-a-plot-using-r-software
+
+you will have to load the data from wherever you saved it:
+
+```R
+data = read.csv('WHERE YOUR DATA IS SAVED')
+```
