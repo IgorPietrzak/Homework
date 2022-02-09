@@ -39,3 +39,10 @@ you will have to load the data from wherever you saved it:
 ```R
 data = read.csv('WHERE YOUR DATA IS SAVED')
 ```
+Using the ``` get_mode()``` function, we find there are 5 modes: 
+*82.4 rows = {2,29}
+*110.5 rows = {9,37}
+*63.6 rows = {14,91}
+*83.6 rows = {18,30}
+*88.7 rows = {41,65}
+
