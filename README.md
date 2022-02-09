@@ -40,6 +40,7 @@ you will have to load the data from wherever you saved it:
 data = read.csv('WHERE YOUR DATA IS SAVED')
 ```
 Using the ``` get_mode()``` function, we find there are 5 modes: 
+
 *82.4 rows = {2,29}
 
 *110.5 rows = {9,37}
