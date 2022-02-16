@@ -24,7 +24,7 @@ hm_greater_than_3m = length(which(snowfall_in_m > 3))
 x = data$year
 y = snowfall_in_m
 greater_than_3m = (which(snowfall_in_m > 3))
-lin_width = 2
+lin_width = 1
 # Functions performing each of the tasks:
 task1 <- function(){
   print("Minimum snowfall:")
@@ -53,8 +53,8 @@ task3 <- function(){
   plot(x,y,xlab="Year",ylab="Snowfall (m)", col = ifelse(y > 3,'blue','black'), pch = 19 )
   # Used for(index in greater_than_3m){
   #  print(data[index,1])
-#  }
-# To generate these values from data$year
+  #  }
+  # To generate these values from data$year
   abline(v = 1910, col="red", lwd=lin_width, lty=2)
   abline(v = 1945, col="red", lwd=lin_width, lty=2)
   abline(v = 1958, col="red", lwd=lin_width, lty=2)
@@ -66,8 +66,8 @@ task3 <- function(){
   abline(v = 2001, col="red", lwd=lin_width, lty=2)
   abline(v = 2002, col="red", lwd=lin_width, lty=2)
   abline(v = 2014, col="red", lwd=lin_width, lty=2)
-
-
+  
+  
 }
 
 get_mode <- function(v) {
@@ -77,11 +77,11 @@ get_mode <- function(v) {
 }
 
 task4 <- function(brks){
-  hist(data$snowfall,breaks = brks) # modes: 10 for 1, 40 for 2,
+  hist(data$snowfall,breaks = brks, xlab ="Snowfall in inches") # modes: 10 for 1, 40 for 2,
 }
 
 main <- function(){
-
-
+  
+  task4(10)
 }
 main()
