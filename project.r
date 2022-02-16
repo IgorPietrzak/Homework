@@ -70,17 +70,18 @@ task3 <- function(){
 
 }
 
-get_mode <- function(d) {
-   uniqued <- unique(d)
-   uniqued[which.max(tabulate(match(d, uniqued)))]
+get_mode <- function(v) {
+  unique_v = unique(v)
+  tab = tabulate(match(v, unique_v))
+  return(unique_v[tab == max(tab)])
 }
 
 task4 <- function(brks){
-  hist(y,breaks = brks)
+  hist(data$snowfall,breaks = brks) # modes: 10 for 1, 40 for 2,
 }
 
 main <- function(){
-  
+
 
 }
 main()
