@@ -12,3 +12,6 @@ most_common_vessel_name <- function() {
     name <- names(which.max(table(data$Vessel.name)))
     return(name)
 }
+
+#Task 2:
+ardglass_rows <- which(data$Home.port == "ARDGLASS")
