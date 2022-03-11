@@ -20,3 +20,12 @@ ardglass_data <- data[(ardglass_rows), ]
 # Making newlyn data frame:
 newlyn_rows <- which(data$Home.port == "NEWLYN")
 newlyn_data <- data[(newlyn_rows), ]
+# How many vessels have newlyn or ardglass as their homeport?
+how_many_ardglass <- nrow(ardglass_data)
+how_many_newlyn <- nrow(newlyn_data)
+# Use this function to deduce if they are typical or not:
+are_they_typical <- function() {
+    View(data)
+    View(ardglass_data)
+    View(newlyn_data)
+}
