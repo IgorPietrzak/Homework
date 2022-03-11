@@ -13,5 +13,10 @@ most_common_vessel_name <- function() {
     return(name)
 }
 
-#Task 2:
+# TASK 2:
+# Making ardglass data frame:
 ardglass_rows <- which(data$Home.port == "ARDGLASS")
+ardglass_data <- data[(ardglass_rows), ]
+# Making newlyn data frame:
+newlyn_rows <- which(data$Home.port == "NEWLYN")
+newlyn_data <- data[(newlyn_rows), ]
