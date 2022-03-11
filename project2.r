@@ -39,3 +39,5 @@ histograms <- function() {
     hist(newlyn_data$Engine.power)
     # Copy whatever line and run it outside the function
 }
+
+# TASK 4:
