@@ -29,3 +29,13 @@ are_they_typical <- function() {
     View(ardglass_data)
     View(newlyn_data)
 }
+
+# TASK 3:
+# Plot histograms of overall length and engine power for both ports
+histograms <- function() {
+    hist(ardglass_data$Overall.length)
+    hist(ardglass_data$Engine.power)
+    hist(newlyn_data$Overall.length)
+    hist(newlyn_data$Engine.power)
+    # Copy whatever line and run it outside the function
+}
