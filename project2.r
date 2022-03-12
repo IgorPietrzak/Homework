@@ -42,11 +42,12 @@ histograms <- function() {
 
 # TASK 4:
 # Want to know if there's a statistically significant difference between the means # nolint
+# SLOW WAY:
 length_hypothesis <- function() {
     ardglass_mean <- mean(ardglass_data$Overall.length)
     newlyn_mean <- mean(newlyn_data$Overall.length)
     ardglass_sd_length <- sd(ardglass_data$Overall.length)
-    critical_value <- 12.706
+    critical_value <- qt(0.975, (how_many_ardglass) - 1)
     t <- sqrt(how_many_ardglass)*((ardglass_mean - newlyn_mean)/(ardglass_sd_length)) #nolint
     reject_ho <- FALSE
     if( abs(t) > critical_value) {                                                      # nolint
@@ -54,3 +55,4 @@ length_hypothesis <- function() {
     }
     return(reject_ho)
 }
+# FAST WAY:
