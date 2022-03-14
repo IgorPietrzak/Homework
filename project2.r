@@ -68,3 +68,23 @@ quick_length_hp <- function(){
 }
 
 # SLOW WAY: returns true if we reject h0
+engine_hypothesis <- function() {
+    ardglass_mean_ep <- mean(ardglass_data$Engine.power)
+    newlyn_mean_ep <- mean(newlyn_data$Engine.power)
+    s2_ardglasse <- var(ardglass_data$Engine.power)
+    s2_newlyne <- var(newlyn_data$Engine.power)
+    t2 <- (ardglass_mean_ep - newlyn_mean_ep)/(sqrt((s2_ardglasse)/(how_many_ardglass) + (s2_newlyne)/(how_many_newlyn))) #nolint
+    dof2 <- (((s2_ardglasse)/(how_many_ardglass) + (s2_newlyne)/(how_many_newlyn))^2)/((((s2_ardglasse)^2)/((how_many_ardglass)^2 * (how_many_ardglass -1))) + (((s2_newlyne)^2)/((how_many_newlyn^2) * (how_many_newlyn -1)))) #nolint
+    c_value2 <- abs(qt(p=0.05, df=dof2))
+    if(abs(t2) > c_value2) {
+        return(TRUE)
+    }
+    else {
+    return(FALSE)
+    }
+}   
+
+# FAST WAY:
+quick_ep_hp <- function() {
+    t.test(ardglass_data$Engine.power, newlyn_data$Engine.power, var.equal = FALSE) #nolint
+}
