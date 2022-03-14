@@ -44,7 +44,7 @@ histograms <- function() {
 }
 
 # TASK 4:
-# Want to know if there's a statistically significant difference between the means # nolint
+# Want to know if there's a statistically significant difference between the means #nolint
 # SLOW WAY: returns true if we reject h0
 length_hypothesis <- function() {
     ardglass_mean_length <- mean(ardglass_data$Overall.length)
