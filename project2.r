@@ -45,7 +45,7 @@ histograms <- function() {
 
 # TASK 4:
 # Want to know if there's a statistically significant difference between the means # nolint
-# SLOW WAY:
+# SLOW WAY: returns true if we reject h0
 length_hypothesis <- function() {
     ardglass_mean_length <- mean(ardglass_data$Overall.length)
     newlyn_mean_length <- mean(newlyn_data$Overall.length)
@@ -60,5 +60,11 @@ length_hypothesis <- function() {
     else {
     return(FALSE)
     }
+}   
+
+# FAST WAY:
+quick_length_hp <- function(){
+    t.test(ardglass_data$Overall.length, newlyn_data$Overall.length, var.equal = FALSE) #nolint
 }
 
+# SLOW WAY: returns true if we reject h0
