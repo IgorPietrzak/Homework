@@ -46,10 +46,8 @@ histograms <- function() {
 # TASK 4:
 # Want to know if there's a statistically significant difference between the means # nolint
 # SLOW WAY:
-
 ardglass_mean_length <- mean(ardglass_data$Overall.length)
 newlyn_mean_length <- mean(newlyn_data$Overall.length)
 s2_ardglass <- var(ardglass_data$Overall.length)
 s2_newlyn <- var(newlyn_data$Overall.length)
-t <- (ardglass_mean_length - newlyn_mean_length)/(sqrt((s2_ardglass)/((how_many_ardglass) + (s2_newlyn)/(how_many_newlyn))
-print(t)
+t <- (ardglass_mean_length - newlyn_mean_length)/(sqrt((s2_ardglass)/(how_many_ardglass) + (s2_newlyn)/(how_many_newlyn)))
