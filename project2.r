@@ -2,7 +2,10 @@
 data_full <- read.csv("http://www1.maths.leeds.ac.uk/~arief/MATH1712/data/vessels.csv") # nolint
 data_subset <- subset(data_full, select = -c(Licence.Category)) # Create subset of data_full without Licence.Category column. # nolint
 data <- unique(data_subset) # Remove excess rows
-
+# Convince that Ive read the data in
+proof_of_data <- function() {
+    str(data)
+}
 how_many_duplicates <- function() {
     duplicates <- nrow(data_subset) - nrow(data)
     return(duplicates)
@@ -43,16 +46,10 @@ histograms <- function() {
 # TASK 4:
 # Want to know if there's a statistically significant difference between the means # nolint
 # SLOW WAY:
-length_hypothesis <- function() {
-    ardglass_mean <- mean(ardglass_data$Overall.length)
-    newlyn_mean <- mean(newlyn_data$Overall.length)
-    ardglass_sd_length <- sd(ardglass_data$Overall.length)
-    critical_value <- qt(0.975, (how_many_ardglass) - 1)
-    t <- sqrt(how_many_ardglass)*((ardglass_mean - newlyn_mean)/(ardglass_sd_length)) #nolint
-    reject_ho <- FALSE
-    if( abs(t) > critical_value) {                                                      # nolint
-        reject_ho <- TRUE
-    }
-    return(reject_ho)
-}
-# FAST WAY:
+
+ardglass_mean_length <- mean(ardglass_data$Overall.length)
+newlyn_mean_length <- mean(newlyn_data$Overall.length)
+s2_ardglass <- var(ardglass_data$Overall.length)
+s2_newlyn <- var(newlyn_data$Overall.length)
+t <- (ardglass_mean_length - newlyn_mean_length)/(sqrt((s2_ardglass)/((how_many_ardglass) + (s2_newlyn)/(how_many_newlyn))
+print(t)
