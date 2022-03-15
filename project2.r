@@ -4,7 +4,7 @@ data_subset <- subset(data_full, select = -c(Licence.Category)) # Create subset 
 data <- unique(data_subset) # Remove excess rows
 # Convince that Ive read the data in
 proof_of_data <- function() {
-    summary(data_full)
+    str(data_full)
 }
 how_many_duplicates <- function() {
     duplicates <- nrow(data_subset) - nrow(data)
