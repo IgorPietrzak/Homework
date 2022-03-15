@@ -53,7 +53,7 @@ length_hypothesis <- function() {
     s2_newlyn <- var(newlyn_data$Overall.length)
     t <- (ardglass_mean_length - newlyn_mean_length)/(sqrt((s2_ardglass)/(how_many_ardglass) + (s2_newlyn)/(how_many_newlyn))) #nolint
     dof <- (((s2_ardglass)/(how_many_ardglass) + (s2_newlyn)/(how_many_newlyn))^2)/((((s2_ardglass)^2)/((how_many_ardglass)^2 * (how_many_ardglass -1))) + (((s2_newlyn)^2)/((how_many_newlyn^2) * (how_many_newlyn -1)))) #nolint
-    c_value <- abs(qt(p=0.05, df=dof))
+    c_value <- abs(qt(p=0.025, df=dof))
     if(abs(t) > c_value) {
         return(TRUE)
     }
@@ -75,7 +75,7 @@ engine_hypothesis <- function() {
     s2_newlyne <- var(newlyn_data$Engine.power)
     t2 <- (ardglass_mean_ep - newlyn_mean_ep)/(sqrt((s2_ardglasse)/(how_many_ardglass) + (s2_newlyne)/(how_many_newlyn))) #nolint
     dof2 <- (((s2_ardglasse)/(how_many_ardglass) + (s2_newlyne)/(how_many_newlyn))^2)/((((s2_ardglasse)^2)/((how_many_ardglass)^2 * (how_many_ardglass -1))) + (((s2_newlyne)^2)/((how_many_newlyn^2) * (how_many_newlyn -1)))) #nolint
-    c_value2 <- abs(qt(p=0.05, df=dof2))
+    c_value2 <- abs(qt(p=0.025, df=dof2))
     if(abs(t2) > c_value2) {
         return(TRUE)
     }
@@ -88,3 +88,4 @@ engine_hypothesis <- function() {
 quick_ep_hp <- function() {
     t.test(ardglass_data$Engine.power, newlyn_data$Engine.power, var.equal = FALSE) #nolint
 }
+hist(newlyn_data$Overall.length, main="Newlyn Overall Length", xlab="Overall Length", breaks=10)
