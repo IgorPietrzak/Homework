@@ -36,10 +36,10 @@ are_they_typical <- function() {
 # TASK 3:
 # Plot histograms of overall length and engine power for both ports
 histograms <- function() {
-    hist(ardglass_data$Overall.length, main="Ardglass Overall Length", xlab="Overall Length", breaks=10)
-    hist(ardglass_data$Engine.power, main="Ardglass Engine Power", xlab="Engine Power", breaks=10)
-    hist(newlyn_data$Overall.length, main="Newlyn Overall Length", xlab="Overall Length", breaks=10)
-    hist(newlyn_data$Engine.power, main="Newlyn Engine Power", xlab="Engine Power", breaks=10)
+    hist(ardglass_data$Overall.length, main="Ardglass Overall Length", xlab="Overall Length", freq=FALSE)
+    hist(ardglass_data$Engine.power, main="Ardglass Engine Power", xlab="Engine Power", freq=FALSE)
+    hist(newlyn_data$Overall.length, main="Newlyn Overall Length", xlab="Overall Length", freq=FALSE)
+    hist(newlyn_data$Engine.power, main="Newlyn Engine Power", xlab="Engine Power", freq=FALSE)
     # Copy whatever line and run it outside the function
 }
 
@@ -88,4 +88,3 @@ engine_hypothesis <- function() {
 quick_ep_hp <- function() {
     t.test(ardglass_data$Engine.power, newlyn_data$Engine.power, var.equal = FALSE) #nolint
 }
-hist(newlyn_data$Overall.length, main="Newlyn Overall Length", xlab="Overall Length", breaks=10)
